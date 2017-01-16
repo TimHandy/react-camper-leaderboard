@@ -11,35 +11,44 @@ import axios from 'axios'
 
 class Table extends React.Component {
     constructor(props) {
-        super(props)
-    }
-    
+  		super(props);
+      this.state = {
+        campers: []
+      }
+      //this.addItem = this.addItem.bind(this);
+  	}
+
     componentDidMount() {
-    console.log('inside Table')
         axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/recent')
-          .then(function(response){
-            console.log(response.data[0]); 
-            console.log('1')
+          .then(response => {
+            response.data.forEach(user => {
+              const camper = {user: user.username, recent: user.recent, allTime: user.alltime};
+              this.setState({
+                campers: this.state.campers.concat(camper)
+              })
+            })
           })
     }
 
-    render() {	
-        return (	
+    render() {
+      // console.log(this.state.campers);
+
+        return (
             <div>
                 <table>
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Camper Name</th> 
+                        <th>Camper Name</th>
                         <th>Points in past 30 days</th>
                         <th>All time points</th>
                     </tr>
                 </thead>
-                  <tbody>
-                     <Row />
-                  </tbody>
+
+                     <Row campers={this.state.campers}/>
+
                 </table>
-                
+
             </div>
         )
     }

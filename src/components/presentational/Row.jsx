@@ -11,14 +11,24 @@ class Row extends React.Component {
         super(props)
     }
 
-    render() {	
-        return (	
-                  <tr >
-                    <td>Jill</td>
-                    <td>Smith</td> 
-                    <td>50</td>
-                    <td>50</td>
-                  </tr>
+    render() {
+      
+        const camper = this.props.campers.map((val, idx) => {
+            return (
+            <tr key={idx}>
+                <td>{idx + 1}</td>
+                <td>{val.user}</td>
+                <td>{val.recent}</td>
+                <td>{val.allTime}</td>
+            </tr>
+          )
+        });
+
+        console.log(camper)
+        return (
+            <tbody>
+                {camper}
+            </tbody>
         )
     }
 }

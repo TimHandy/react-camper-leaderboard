@@ -3,7 +3,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './css/styles.scss'
-//import Table from 'Table'
+import Table from 'Table'
 
 
 
@@ -16,7 +16,7 @@ class App extends React.Component {
     render() {
         return (
             <div style={{width:"50%", margin:"0 auto"}}>
-               <p>hello, this is the app rendered element</p>
+               <Table />
             </div>
         )
     }
