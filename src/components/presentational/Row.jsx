@@ -17,10 +17,11 @@ class Row extends React.Component {
             .props
             .campers
             .map((camper, idx) => {
+                const url = "https://freecodecamp.com/" +camper.user
                 return (
                     <tr key={idx}>
                         <td>{idx + 1}</td>
-                        <td>{camper.user}</td>
+                        <td style={{textAlign: 'left'}}><img src={camper.img} /><a href={url} target="_blank">{camper.user}</a></td>
                         <td>{camper.recent}</td>
                         <td>{camper.allTime}</td>
                     </tr>

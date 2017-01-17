@@ -4,15 +4,8 @@ import axios from 'axios'
 
 axios.get('https://fcctop100.herokuapp.com/api/fccusers/top/recent')
   .then(function(response){
-    console.log(response.data[0]); 
+    console.log(response.data[0]);
     console.log('1')
   })
 
-    
-
 module.exports = httpReq
-
-
-
-
-// https://fcctop100.herokuapp.com/api/fccusers/top/alltime

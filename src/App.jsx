@@ -5,7 +5,6 @@ import ReactDOM from 'react-dom'
 import './css/styles.scss'
 import Table from 'Table'
 
-//const Table = require('./components/container/Table.jsx')
 class App extends React.Component {
     constructor(props) {
         super()
@@ -23,8 +22,6 @@ class App extends React.Component {
         )
     }
 }
-
-//console.log('hello from App.jsx')
 
 ReactDOM.render(
     <App/>, document.getElementById('app'))

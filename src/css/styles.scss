@@ -61,14 +61,24 @@ table {
     width: 100%;
     margin: 0, auto;
     }
-    
+
 table, th, td {
     padding: 5px;
     border: 1px solid black;
     text-align: center;
 }
 
+tr:nth-child(even) {
+    background-color: #e8e8e8;
+}
 
+img {
+  width: 30px;
+  height: 30px;
+  display: inline;
+  vertical-align: middle;
+  margin-right: 10px;
+}
 
 /* unvisited link */
 a {
