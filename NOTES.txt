@@ -1,3 +1,10 @@
  "dev": "webpack-dev-server --port $PORT --host $IP  --content-base src/",
 
 
+
+
+
+instead of this.state.recent, name it column... then can have 'recent' or 'alltime'.. can be appended to the url for the api call. when the column header clicked, run the api call to retrieve data for that column and update this.state.campers. rows get re-rendered automatically with new this.state.campers data.
+
+
+I think we should pseudocode more than we do.

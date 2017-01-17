@@ -12,22 +12,24 @@ class Row extends React.Component {
     }
 
     render() {
-      
-        const camper = this.props.campers.map((val, idx) => {
-            return (
-            <tr key={idx}>
-                <td>{idx + 1}</td>
-                <td>{val.user}</td>
-                <td>{val.recent}</td>
-                <td>{val.allTime}</td>
-            </tr>
-          )
-        });
 
-        console.log(camper)
+        const campers = this
+            .props
+            .campers
+            .map((camper, idx) => {
+                return (
+                    <tr key={idx}>
+                        <td>{idx + 1}</td>
+                        <td>{camper.user}</td>
+                        <td>{camper.recent}</td>
+                        <td>{camper.allTime}</td>
+                    </tr>
+                )
+            })
+
         return (
             <tbody>
-                {camper}
+                {campers}
             </tbody>
         )
     }

@@ -5,8 +5,6 @@ import ReactDOM from 'react-dom'
 import './css/styles.scss'
 import Table from 'Table'
 
-
-
 //const Table = require('./components/container/Table.jsx')
 class App extends React.Component {
     constructor(props) {
@@ -15,15 +13,18 @@ class App extends React.Component {
 
     render() {
         return (
-            <div style={{width:"50%", margin:"0 auto"}}>
-               <Table />
+            <div
+                style={{
+                    width: '50%',
+                    margin: '0 auto'
+                }}>
+                <Table/>
             </div>
         )
     }
 }
 
-console.log('hello from App.jsx')
+//console.log('hello from App.jsx')
 
 ReactDOM.render(
-	<App />, document.getElementById('app')
-)
+    <App/>, document.getElementById('app'))
