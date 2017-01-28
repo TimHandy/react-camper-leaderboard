@@ -21,40 +21,47 @@ Hint: To get the top 100 campers of all time: https://fcctop100.herokuapp.com/ap
 
 ## Completed App
 
-[Github Pages app](https://)
-
+[Github Pages app](https://timhandy.github.io/react-camper-leaderboard/)
 
 ## Notable learning/features
 
-The HTML formatted markup updates instantly without a full page refresh upon changing the text. 
+- I should pseudocode more than I do, and plan the app out on paper first.
 
-I used an NPM module called Marked. This can be utilised via CDN and link tag in the html or installed via NPM. I used the CDN version here.
+- .map over the api response, rather than doing a foreach.
 
-Used React for the first time.
+- Only use setState once in the apiCall. I had multiple setState in the same function; this is bad. Don't need a first setState to set clear the campers to empty array, just build a fresh array and overwrite the existing one.
 
-Props and State utilised
+- The column sorting didn't matter which column was clicked; it just toggled back and forth between the two api calls and displayed that data. If I made handleClick accept an arg...'column', and used that to do the re-resort, this is more flexible/expandable if columns increase. To do this, I added an anonymous function in the onClick and pass in the arg for which column, this is a common pattern. David at the hack night explained this to me.
 
-app.js stores the state for the whole app
+- Heard directly from a developer that their whole company is now using ES6 and removing jquery from all projects they refactor. They are no-longer allowed to use jquery and have to do everything in plain JS. He said that with ES6 he doesn't need to use jquery.
 
-Use of React's onChange and creating a handleChange function to update the state.
+- App.jsx out on it's own looks odd; put this in the root of src next time.
 
-Passing a reference to handleChange down to a child component so that it can update the state
-
-Another child component gets the updated state handed back down to it via props.
-
-Stateless Functional Components can have a shorter syntax style.
-
-Sass used. Media query for small screens
-
-Deployed to the /docs dir to allow deployment to Github Pages
-
+- Inline styles are pretty cool, goes against the whole css in a separate file thing, but I can see why it works; everything is in one place.
 
 ## Notes for next time
 
-Changed to use webpack-dev-server
-make index.html stored in in app dir, not the src dir. The html file should be dynamically generated on running webpack.
+- I should pseudocode more than I do, and plan the app out on paper first.
 
-Use webpack-dev-server... creating webpack files every time is too slow
+- Start to keep a boilerplate for React apps that I can use as a starting point.
+
+- More smaller components is better than a few large ones. In future I would have created a header component also.
+
+- dir structure:
+
+      src 
+          components   => for all dumb components
+          controllers  => for all smart/container components
+          App.jsx   => the main container for the app
+      main.js  => to launch the app... this simply renders App.jsx to the app div.
+
+- Try using fetch with promises instead of axios...
+
+      fetch('/apiurl').then(response => {
+          do whatever
+      })
+
+- Remove unused CSS.
 
 
 ## Dev
